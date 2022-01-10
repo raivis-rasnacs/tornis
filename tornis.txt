@@ -1,0 +1,30 @@
+#skaits = int(input("Ievadi skaitu!"))
+skaits = 5
+#tornis = [2, 0, 1, 3, 1]
+tornis = [1, 4, 9, 2]
+tornis = [2, 7, 2, 1, 3]
+#for x in range(skaits):
+#    tornis.append(int(input()))
+
+pirmaisCipars = 0
+virkne = tornis[0]
+pirmaisCipars = tornis[0]
+for x in range(1, len(tornis)):
+    if tornis[x] == 0:
+        for i in tornis[x+1:]:
+            if tornis[i] != 0:
+                atlikusajosIrNenulle = True
+                break
+        if atlikusajosIrNenulle == True:
+            virkne = str(tornis[x]) + str(virkne)
+        else:
+            virkne = str(virkne) + str(tornis[x])
+        continue
+    if tornis[x] > pirmaisCipars:
+        virkne = str(virkne) + str(tornis[x])
+        continue
+    elif tornis[x] <= pirmaisCipars:
+        virkne = str(tornis[x]) + str(virkne)
+        continue
+
+print(virkne)
